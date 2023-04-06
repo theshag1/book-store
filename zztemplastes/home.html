@@ -1,0 +1,88 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <style>
+        /* Set display property of the container to flex */
+        .cards-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        /* Set flex property of the card to control its size */
+        .card {
+            flex: 1 0 18rem;
+        }
+    </style>
+
+    <div class="cards-container">
+        {% for book in books %}
+            <div class="card">
+                <img src="{{ book.image.url }}" class="card-img-top" alt="{{ book.image.url }}">
+                <div class="card-body">
+                    <h5 class="card-title">{{ book.title }}</h5>
+                    <p class="card-text">{{ book.description }}</p>
+                    <a href="korzinka/" class="button">Buy {{ book.price }} $</a>
+                    -10%
+
+                    <style>
+                        .button {
+                            background-color: #001cff;
+                            border: none;
+                            color: white;
+                            padding: 12px 24px;
+                            text-align: center;
+                            text-decoration: none;
+                            display: inline-block;
+                            font-size: 16px;
+                            font-family: Arial, sans-serif;
+                            border-radius: 5px;
+                        }
+                    </style>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+
+
+
+
+
+
+    {#    {% for book in books %}#}
+    {##}
+    {#        <div class="card" style="width: 18rem;">#}
+    {#            <img src="{{ book.image.url }}" class="card-img-top" alt="{{ book.image.url }}">#}
+    {#            <div class="card-body">#}
+    {#                <h5 class="card-title">{{ book.title }}</h5>#}
+    {#                <p class="card-text">{{ book.description }}#}
+    {#                </p>#}
+    {#                <a href="" class="btn btn-primary">clic to buy</a>#}
+    {#                <a href="korzinka/" class="button"> Buy {{ book.price }} $</a>#}
+    {#                -10%#}
+    {##}
+    {#                <style>#}
+    {#                    .button {#}
+    {#                        background-color: #001cff;#}
+    {#                        border: none;#}
+    {#                        color: white;#}
+    {#                        padding: 12px 24px;#}
+    {#                        text-align: center;#}
+    {#                        text-decoration: none;#}
+    {#                        display: inline-block;#}
+    {#                        font-size: 16px;#}
+    {#                        font-family: Arial, sans-serif;#}
+    {#                        border-radius: 5px;#}
+    {#                    }#}
+    {#                </style>#}
+    {##}
+    {##}
+    {#            </div>#}
+    {#        </div>#}
+    {#        </div>#}
+    {#    {% endfor %}#}
+
+
+{% endblock %}

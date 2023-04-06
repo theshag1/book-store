@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+    {% for book in books %}
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <div class="card" style="width: 18rem;">
+            <img src="{{ book.image.url }}" class="card-img-top" alt="{{ book.image.url }}">
+            <div class="card-body">
+                <h5 class="card-title">{{ book.title }}</h5>
+                <p class="card-text">{{ book.description }}
+                </p>
+                <p class="card-text">yoizlgan sana: {{ book.pub_year }}
+                </p>
+
+
+                <a href="#" class="btn btn-primary">{{ book.price }} $ </a>
+            </div>
+        </div>
+        <br>
+        <br>
+        <br>
+        <a href="http://127.0.0.1:8000/" class="button">Click to home </a>
+
+        <style>
+            .button {
+                background-color: #001cff;
+                border: none;
+                color: white;
+                padding: 12px 24px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 16px;
+                font-family: Arial, sans-serif;
+                border-radius: 5px;
+            }
+        </style>
+
+
+    {% endfor %}
+
+
+
+
+
+{% endblock %}
