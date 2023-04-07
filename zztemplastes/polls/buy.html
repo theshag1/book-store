@@ -4,11 +4,8 @@
 {% block content %}
     {% for book in books %}
         <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <div class="card" style="width: 18rem;">
+
+        <div class="card" style="width: 39rem;">
             <img src="{{ book.image.url }}" class="card-img-top" alt="{{ book.image.url }}">
             <div class="card-body">
                 <h5 class="card-title">{{ book.title }}</h5>
@@ -16,8 +13,6 @@
                 </p>
                 <p class="card-text">yoizlgan sana: {{ book.pub_year }}
                 </p>
-
-
                 <a href="#" class="btn btn-primary">{{ book.price }} $ </a>
             </div>
         </div>
