@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="card text-bg-dark">
+        <img src="{{ book.image.url }}" class="card-img" alt="{{ book.image.url }}">
+        <div class="card-img-overlay">
+            <h5 class="card-title"> Kitob nomi : {{ book.title }}</h5>
+            <p class="card-text">Kitob xaqida : {{ book.description }}</p>
+            <p class="card-text">Kitob narxi :{{ book.price }} $</p>
+            <p class="card-text">Sotuv prasent : {{ book.sale_percent }} % </p>
+            <p class="card-text">Yozilgan sana : {{ book.pub_year }} yil </p>
+            <p class="card-text custom-text">Kitob o'lchami : {{ book.page_size }} varoq </p>
+            <p class="card-text">Kitob tili : {{ book.lang }} tili</p>
+            <a href="#" class="button">Buy {{ book.price }} $ </a>
+
+            <style>
+                .button {
+                    background-color: rgba(0, 28, 255, 0.56);
+                    border: none;
+                    color: white;
+                    padding: 12px 24px;
+                    text-align: center;
+                    text-decoration: none;
+                    display: inline-block;
+                    font-size: 16px;
+                    font-family: Arial, sans-serif;
+                    border-radius: 5px;
+                }
+            </style>
+            <br>
+            <br>
+            <a href="{% url 'homepage' %}" class="button">Home</a>
+
+        </div>
+{% endblock %}

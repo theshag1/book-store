@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{#{% load static %}#}
+{% block content %}
+{#    <div class="underline-title">#}
+        <style>
+            body {
+                background-image: url("/media/wallpaperflare.com_wallpaper (2).jpg");
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+        </style>
+
+        <form action="{% url 'login' %}" method="post">
+{#            <link href="{% static 'home.css' %}" rel="stylesheet">#}
+            {% csrf_token %}
+
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username"> <br>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password">
+            <input id="submit-btn" type="submit" name="submit" value="LOGIN"/> <br>
+            <a href="http://127.0.0.1:8000/account/login/str">Dont have an account ? </a>
+
+        </form>
+{#    </div>#}
+{% endblock %}
+
+
+{##}
+{#{% extends 'base.html' %}#}
+{##}
+{#{% block content %}#}
+{##}
+{#    <body>#}
+{#    <div id="card">#}
+{#        <div id="card-content">#}
+{#            <div id="card-title">#}
+{#                <h2>LOGIN</h2>#}
+{#                <div class="underline-title"></div>#}
+{#            </div>#}
+{#            <form method="post" class="form" action="{% url 'homepage' %}">#}
+{#                {% csrf_token %}#}
+{#                <label for="user-email" style="padding-top:13px">#}
+{#                    &nbsp;Email#}
+{#                </label>#}
+{#                <input id="user-email" class="form-content" type="email" name="email" autocomplete="on" required/>#}
+{#                <div class="form-border"></div>#}
+{#                <label for="user-password" style="padding-top:22px">&nbsp;Password#}
+{#                </label>#}
+{#                <input id="user-password" class="form-content" type="password" name="password" required/>#}
+{#                <div class="form-border"></div>#}
+{#                <a href="#">#}
+{#                    <legend id="forgot-pass">Forgot password?</legend>#}
+{#                </a>#}
+{#                <a href="http://127.0.0.1:8000/account/login/str  " id="signup">Don't have account yet?</a>#}
+{#            </form>#}
+{#        </div>#}
+{#    </div>#}
+{#{% endblock %}#}
